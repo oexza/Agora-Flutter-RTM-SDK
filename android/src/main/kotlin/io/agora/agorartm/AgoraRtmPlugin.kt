@@ -69,7 +69,7 @@ class AgoraRtmPlugin : FlutterPlugin, MethodCallHandler {
             else -> null
         }
 
-        var params: Map<String, Any> = callArguments["params"] as Map<String, Any>
+        var params: Map<String, Any> = (callArguments["params"]?: mapOf<String, Any>()) as Map<String, Any>
 
         when (call) {
             "static" -> {
